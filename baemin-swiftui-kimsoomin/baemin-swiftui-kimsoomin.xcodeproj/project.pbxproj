@@ -10,9 +10,22 @@
 		77EFFA9B2EE656B8006837B1 /* baemin-swiftui-kimsoomin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "baemin-swiftui-kimsoomin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		77EFFABB2EE6619F006837B1 /* Exceptions for "baemin-swiftui-kimsoomin" folder in "baemin-swiftui-kimsoomin" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Global/Info.plist,
+			);
+			target = 77EFFA9A2EE656B8006837B1 /* baemin-swiftui-kimsoomin */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		77EFFA9D2EE656B8006837B1 /* baemin-swiftui-kimsoomin */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				77EFFABB2EE6619F006837B1 /* Exceptions for "baemin-swiftui-kimsoomin" folder in "baemin-swiftui-kimsoomin" target */,
+			);
 			path = "baemin-swiftui-kimsoomin";
 			sourceTree = "<group>";
 		};
@@ -253,6 +266,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "baemin-swiftui-kimsoomin/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -284,6 +298,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "baemin-swiftui-kimsoomin/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
