@@ -1,0 +1,97 @@
+//
+//  FoodCategoryView.swift
+//  baemin-swiftui-kimsoomin
+//
+//  Created by mandoo on 12/9/25.
+//
+
+import SwiftUI
+
+struct FoodCategoryView: View {
+    private let foodCategories = FoodCategory.foodCategories
+    let columns = Array(repeating: GridItem(.flexible()), count: 5)
+    
+    var body: some View {
+        VStack(spacing: 0) {
+            FoodCategoryTabView()
+            
+            Divider()
+                .foregroundStyle(.baeminBackgroundWhite)
+                .frame(height: 1)
+                .padding(.bottom, 13)
+            
+            LazyVGrid(columns: columns,  spacing: 20) {
+                ForEach(foodCategories, id: \.id) {category in
+                    VStack {
+                        Image(category.imageName)
+                            .resizable()
+                            .frame(width: 58, height: 58)
+                            .cornerRadius(20)
+                            
+                        Text(category.name)
+                            .font(.body_r_14)
+                    }
+                }
+            }
+            .padding(.horizontal, 16)
+            .padding(.bottom, 21)
+            
+            Divider()
+                .foregroundStyle(.baeminBackgroundWhite)
+                .frame(height: 1)
+            
+            HStack(spacing: 0) {
+                Text("음식배달")
+                    .font(.head_b_14)
+                Text("에서 더보기")
+                    .font(.body_r_14)
+                
+                Image(.chevronRight)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 12, height: 12)
+                    .padding(.vertical, 10)
+            }
+        }
+        .background(.baeminWhite)
+    }
+}
+
+
+struct FoodCategoryTabView: View {
+    @State private var selectedCategory: String = "음식배달"
+    private let tabCategories = ["음식배달", "픽업", "장보기·쇼핑", "선물하기", "혜택모아보기"]
+    private let rectangleWidths: [CGFloat] = [65, 32, 80, 64, 90]
+    
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 12) {
+                ForEach(Array(tabCategories.enumerated()), id: \.element) { index, category in
+                    let currentWidth = rectangleWidths[index]
+                    
+                    VStack(spacing: 13) {
+                        Button {
+                            selectedCategory = category
+                        } label: {
+                            Text(category)
+                                .font(.head_b_18)
+                                .foregroundStyle(category == selectedCategory ? .baeminBlack : .baeminGray300)
+                        }
+                        
+                        if category == selectedCategory {
+                            Rectangle()
+                                .foregroundColor(.baeminBlack)
+                                .frame(width: currentWidth, height: 3)
+                        } else {
+                            Rectangle()
+                                .foregroundColor(.white)
+                                .frame(width: currentWidth, height: 3)
+                        }
+                    }
+                }
+            }
+            .padding(.horizontal, 16)
+        }
+        .padding(.top, 16)
+    }
+}
