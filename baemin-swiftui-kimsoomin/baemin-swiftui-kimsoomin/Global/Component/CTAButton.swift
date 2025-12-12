@@ -10,23 +10,19 @@ import SwiftUI
 struct CTAButton: View {
     var text: String
     var isActive: Bool = false
+    var action: () -> Void = {}
     
     var body: some View {
-        Button {
-            
-        } label: {
+        Button(action: action) {
             RoundedRectangle(cornerRadius: 4)
                 .foregroundColor(isActive ? .baeminMint500 : .baeminGray200)
                 .overlay {
-                    Text("\(text)")
+                    Text(text)
                         .foregroundStyle(.baeminWhite)
                         .font(.head_b_18)
                 }
         }
         .frame(height: 52)
+        .disabled(!isActive)
     }
-}
-
-#Preview {
-    CTAButton(text: "button", isActive: true)
 }
