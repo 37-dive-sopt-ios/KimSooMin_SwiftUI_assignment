@@ -18,7 +18,7 @@ struct Mart: Identifiable, Hashable {
         Mart(name: "이마트슈퍼", imageName: "mart2"),
         Mart(name: "홈플러스", imageName: "mart5"),
         Mart(name: "GS25", imageName: "mart6"),
-        Mart(name: "세븐일레븐", imageName: "mart4"),
+        Mart(name: "세븐일레븐", imageName: "mart4")
     ]
 }
 

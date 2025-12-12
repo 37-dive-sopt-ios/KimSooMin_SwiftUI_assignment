@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MartView: View {
     private let mart = Mart.mart
-    let columns = Array(repeating: GridItem(.flexible()), count: 6)
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
