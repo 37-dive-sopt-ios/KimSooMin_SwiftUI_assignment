@@ -13,9 +13,6 @@ struct HeaderView: View {
             PersonalView()
                 .padding(.horizontal, 16)
             
-            SearchBarView()
-                .padding(.horizontal, 16)
-            
             EventView()
         }
     }

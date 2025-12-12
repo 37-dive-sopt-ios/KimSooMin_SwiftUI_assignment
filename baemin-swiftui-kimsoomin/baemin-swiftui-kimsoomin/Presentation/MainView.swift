@@ -9,22 +9,26 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            LazyVStack(spacing: 0) {
-                HeaderView()
+        ScrollView(.vertical, showsIndicators: false, ) {
+            LazyVStack(spacing: 0, pinnedViews: [.sectionHeaders]) {
+                PersonalView()
+                    .padding(.horizontal, 16)
                 
-                VStack(spacing: 10) {
-                    FoodCategoryView()
+                Section {
+                    EventView()
                     
-                    MartView()
-                    
-                    BannerView()
-                    
-                    PopularRankView()
-                    
-                    RecentOrderView()
-                    
-                    DiscountRestaurantView()
+                    VStack(spacing: 10) {
+                        FoodCategoryView()
+                        MartView()
+                        BannerView()
+                        PopularRankView()
+                        RecentOrderView()
+                        DiscountRestaurantView()
+                    }
+                } header: {
+                    SearchBarView()
+                        .padding(.horizontal, 16)
+                        .padding(.top, 3)
                 }
             }
         }
@@ -34,8 +38,8 @@ struct MainView: View {
 }
 
 struct ScrollClipModifier: ViewModifier {
-  func body(content: Content) -> some View {
-    content
-      .clipShape(Rectangle())
-  }
+    func body(content: Content) -> some View {
+        content
+            .clipShape(Rectangle())
+    }
 }

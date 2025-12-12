@@ -31,6 +31,7 @@ struct SearchBarView: View {
         .background(
             RoundedRectangle(cornerRadius: 50)
                 .stroke(.baeminBlack, lineWidth: 1)
+                .fill(Color.baeminWhite)  
         )
         .frame(height: 40)
         .padding(.bottom, 24)
