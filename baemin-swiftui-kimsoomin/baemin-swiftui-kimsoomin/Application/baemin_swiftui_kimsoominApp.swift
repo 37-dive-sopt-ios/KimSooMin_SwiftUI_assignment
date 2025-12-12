@@ -11,7 +11,7 @@ import SwiftUI
 struct baemin_swiftui_kimsoominApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoginView()
         }
     }
 }

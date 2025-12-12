@@ -10,13 +10,18 @@ import SwiftUI
 struct WelcomeView: View {
     @State var userID: String
     
+    @State private var navigateToMain: Bool = false
     var body: some View {
         VStack {
             HStack(spacing: 67) {
                 Image(.arrowLeft)
                     .frame(width: 36)
-                Text("대체 뼈짐 누가 시켰어??")
+                
+                Text("대체 뼈찜 누가 시켰어??")
                     .font(.title_sb_18)
+                    .frame(width: 175)
+                    .lineLimit(1)
+                
                 Spacer()
             }
             .padding(.horizontal, 16)
@@ -38,9 +43,15 @@ struct WelcomeView: View {
                 
                 Spacer()
                 
-                CTAButton(text: "메인으로 가기", isActive: true)
+                CTAButton(text: "메인으로 가기", isActive: true) {
+                    navigateToMain = true
+                }
             }
             .padding(.horizontal, 16)
+        }
+        .navigationBarBackButtonHidden(true)
+        .navigationDestination(isPresented: $navigateToMain) {
+            TabBarView()
         }
     }
 }
